@@ -6,8 +6,11 @@ function Navbar() {
         <nav className="border-gray-200 px-2 sm:px-4 py-2.5  bg-gray-800">
             <div className="container flex flex-wrap justify-between items-center mx-auto">
                 <a className="flex items-center">
+
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Usac_logo.png" className="mr-3 h-6 sm:h-9" alt="Logo" />
-                    <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Biblioteca USAC</span>
+                    <Link to="/" >
+                        <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Biblioteca USAC</span>
+                    </Link>
                 </a>
                 <button data-collapse-toggle="mobile-menu" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 text-gray-400 hover:bg-gray-700 focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
                     <span className="sr-only">Open main menu</span>

@@ -12,8 +12,6 @@ export const postUser = ({ userId = '', username = '', nickname = '', password =
         estado = false
     }
 
-
-
     const userDetailFormated = {
         "id_user": userId,
         "user_name": username,
@@ -24,10 +22,47 @@ export const postUser = ({ userId = '', username = '', nickname = '', password =
     }
 
     const body = JSON.stringify(userDetailFormated)
-
-    console.log(body)
-
     return Axios.post(url, body, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+}
+
+export const getUser = ({ id_user = '' }) => {
+
+    const url = `${API_URL}user/${id_user}`
+
+    return Axios.get(url);
+
+}
+
+export const putUser = ({ id_user = '', user_name = '', user_nickname = '', user_password = '', user_rol = '', available = '' }) => {
+
+    console.log(available)
+
+    const url = `${API_URL}user`
+
+    // ! Cuidado cuando se manda false
+    // let estado = ''
+    // if (available.toLocaleLowerCase() == 'true') {
+    //     estado = true
+    // } else if (available.toLocaleLowerCase() == 'false') {
+    //     estado = false
+    // }
+
+    const userDetailFormated = {
+        id_user,
+        user_name,
+        user_nickname,
+        user_password,
+        user_rol,
+        available
+    }
+
+    const body = JSON.stringify(userDetailFormated)
+    return Axios.put(url, body, {
         headers: {
             'Content-Type': 'application/json'
         }

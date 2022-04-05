@@ -36,13 +36,12 @@ function CreateUser() {
                 setError(errors)
                 setMsg(msg)
             }
-        )
+        ).catch((e) => {
+            setError(['Error en la conexión'])
+        })
 
 
     }
-
-    console.log(error)
-    console.log(msg)
 
     return (
         <form className="w-4/5" onSubmit={handleSubmit}>
@@ -63,7 +62,7 @@ function CreateUser() {
             }
 
 
-            <div className="mb-6">
+            <div className="mb-6 mt-6">
                 <label htmlFor="userId" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">ID Usuario:</label>
                 <input name="userId" value={userId} onChange={handleInputChange} type="text" id="userId" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ID usuario" autoComplete="off" required />
             </div>
