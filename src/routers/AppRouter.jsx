@@ -5,6 +5,8 @@ import Navbar from '../components/Navbar'
 import CreateUser from '../components/CreateUser'
 import UserScreen from '../components/UserScreen';
 import SearchUser from '../components/SearchUser';
+import BookScreen from '../components/BookScreen';
+import CreateBook from '../components/bookComponents/CreateBook';
 
 export const AppRouter = () => {
     return (
@@ -16,6 +18,9 @@ export const AppRouter = () => {
                     <Route path="/user" element={<UserScreen />} />
                     <Route path="/createuser" element={<CreateUser />} />
                     <Route path="/searchuser" element={<SearchUser />} />
+                    <Route path="/book" element={<BookScreen />} />
+                    <Route path="/createbook" element={<CreateBook />} />
+
                 </Routes>
             </div>
         </BrowserRouter>
