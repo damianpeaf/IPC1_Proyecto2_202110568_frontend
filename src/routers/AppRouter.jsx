@@ -7,6 +7,7 @@ import UserScreen from '../components/UserScreen';
 import SearchUser from '../components/SearchUser';
 import BookScreen from '../components/BookScreen';
 import CreateBook from '../components/bookComponents/CreateBook';
+import UpdateBook from '../components/bookComponents/UpdateBook';
 
 export const AppRouter = () => {
     return (
@@ -20,7 +21,7 @@ export const AppRouter = () => {
                     <Route path="/searchuser" element={<SearchUser />} />
                     <Route path="/book" element={<BookScreen />} />
                     <Route path="/createbook" element={<CreateBook />} />
-
+                    <Route path="/searchbook" element={<UpdateBook />} />
                 </Routes>
             </div>
         </BrowserRouter>

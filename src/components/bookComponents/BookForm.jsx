@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { postBook } from "../../helpers/books";
+import { deleteBook, postBook, putBook } from "../../helpers/books";
 import { useForm } from "../../hooks/useForm";
 
 function BookForm({ bookData, type = 'create' }) {
@@ -26,8 +26,9 @@ function BookForm({ bookData, type = 'create' }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+    }
 
-        // ? Validar el tipo de formulario
+    const handleCreate = () => {
         postBook(formValues).then(
             ({ data }) => {
                 const { errors, msg } = data
@@ -37,8 +38,30 @@ function BookForm({ bookData, type = 'create' }) {
         ).catch((e) => {
             setError(['Error en la conexión'])
         })
+    }
 
+    const handleUpdate = () => {
+        putBook(formValues).then(
+            ({ data }) => {
+                const { errors, msg } = data
+                setError(errors)
+                setMsg(msg)
+            }
+        ).catch((e) => {
+            setError(['Error en la conexión'])
+        })
+    }
 
+    const handleDelete = () => {
+        deleteBook(id_book).then(
+            ({ data }) => {
+                const { errors, msg } = data
+                setError(errors)
+                setMsg(msg)
+            }
+        ).catch((e) => {
+            setError(['Error en la conexión'])
+        })
     }
 
     return (
@@ -113,21 +136,21 @@ function BookForm({ bookData, type = 'create' }) {
 
                 {(type === 'create')
                     ? (<button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-                        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        <span onClick={handleCreate} className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                             Crear
                         </span>
                     </button>)
                     : (<>
                         <div>
                             <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
-                                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                <span onClick={handleUpdate} className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                                     Actualizar
                                 </span>
                             </button>
                         </div>
                         <div>
                             <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
-                                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                <span onClick={handleDelete} className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                                     Eliminar
                                 </span>
                             </button>

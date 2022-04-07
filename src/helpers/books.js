@@ -18,3 +18,32 @@ export const postBook = (bookData) => {
     });
 
 }
+
+export const getBook = ({ book_author = '', book_title }) => {
+
+    const url = `${API_URL}book?author=${book_author}&titulo=${book_title}`
+    return Axios.get(url);
+
+}
+
+export const putBook = (bookData) => {
+
+    const url = `${API_URL}book`
+
+    const body = JSON.stringify(bookData)
+    return Axios.put(url, body, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+}
+
+
+export const deleteBook = (bookId) => {
+
+    const url = `${API_URL}book/${bookId}`
+
+    return Axios.delete(url);
+
+}
