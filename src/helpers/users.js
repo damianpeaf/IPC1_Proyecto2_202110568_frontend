@@ -38,6 +38,13 @@ export const getUser = ({ id_user = '' }) => {
 
 }
 
+export const getAllUser = () => {
+
+    const url = `${API_URL}user`
+    return Axios.get(url);
+
+}
+
 export const putUser = ({ id_user = '', user_name = '', user_nickname = '', user_password = '', user_rol = '', available = '' }) => {
 
     console.log(available)

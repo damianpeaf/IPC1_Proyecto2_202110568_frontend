@@ -47,3 +47,10 @@ export const deleteBook = (bookId) => {
     return Axios.delete(url);
 
 }
+
+export const getAllBooks = () => {
+
+    const url = `${API_URL}book`
+    return Axios.get(url);
+
+}
