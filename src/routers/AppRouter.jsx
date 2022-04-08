@@ -10,13 +10,14 @@ import CreateBook from '../components/bookComponents/CreateBook';
 import UpdateBook from '../components/bookComponents/UpdateBook';
 import BorrowScreen from '../components/BorrowScreen';
 import CreateBorrow from '../components/borrowComponents/CreateBorrow';
+import SearchBorrow from '../components/borrowComponents/SearchBorrow';
 
 
 export const AppRouter = () => {
     return (
         <BrowserRouter className="App">
             <Navbar />
-            <div className="flex items-center min-h-screen  justify-center">
+            <div className="flex items-center min-h-screen  justify-center mx-1">
                 <Routes>
                     <Route path="/" element={<UserScreen />} />
                     <Route path="/user" element={<UserScreen />} />
@@ -27,7 +28,8 @@ export const AppRouter = () => {
                     <Route path="/searchbook" element={<UpdateBook />} />
                     <Route path="/borrowscreen" element={<BorrowScreen />} />
                     <Route path="/createborrow" element={<CreateBorrow />} />
-
+                    <Route path="/returnborrow" element={<SearchBorrow type='return' />} />
+                    <Route path="/searchborrow" element={<SearchBorrow />} />
                 </Routes>
             </div>
         </BrowserRouter>

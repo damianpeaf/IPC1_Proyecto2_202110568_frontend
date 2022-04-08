@@ -16,3 +16,17 @@ export const postBorrow = (borrowData) => {
     });
 
 }
+
+export const returnBorrow = ({ id_borrow }) => {
+
+    const url = `${API_URL}borrow/${id_borrow}`
+    return Axios.put(url);
+
+}
+
+export const getBorrow = ({ id_borrow }) => {
+
+    const url = `${API_URL}borrow/${id_borrow}`
+    return Axios.get(url);
+
+}
