@@ -11,6 +11,7 @@ import UpdateBook from '../components/bookComponents/UpdateBook';
 import BorrowScreen from '../components/BorrowScreen';
 import CreateBorrow from '../components/borrowComponents/CreateBorrow';
 import SearchBorrow from '../components/borrowComponents/SearchBorrow';
+import ReportScreen from '../components/ReportScreen'
 
 
 export const AppRouter = () => {
@@ -30,6 +31,8 @@ export const AppRouter = () => {
                     <Route path="/createborrow" element={<CreateBorrow />} />
                     <Route path="/returnborrow" element={<SearchBorrow type='return' />} />
                     <Route path="/searchborrow" element={<SearchBorrow />} />
+                    <Route path="/reportscreen" element={<ReportScreen />} />
+
                 </Routes>
             </div>
         </BrowserRouter>

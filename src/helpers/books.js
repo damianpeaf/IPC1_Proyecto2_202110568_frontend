@@ -54,3 +54,11 @@ export const getAllBooks = () => {
     return Axios.get(url);
 
 }
+
+
+export const getReport = () => {
+
+    const url = `${API_URL}report`
+    return Axios.get(url);
+
+}
