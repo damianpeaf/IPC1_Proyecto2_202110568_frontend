@@ -50,7 +50,7 @@ export const deleteBook = (bookId) => {
 
 export const getAllBooks = () => {
 
-    const url = `${API_URL}book`
+    const url = `${API_URL}book/all`
     return Axios.get(url);
 
 }
