@@ -1,6 +1,6 @@
 
 import Axios from 'axios'
-const API_URL = "http://127.0.0.1:5000/"
+const API_URL = "https://ipc1-c-202110568.herokuapp.com/"
 
 
 export const postBook = (bookData) => {
@@ -21,7 +21,10 @@ export const postBook = (bookData) => {
 
 export const getBook = ({ book_author = '', book_title }) => {
 
-    const url = `${API_URL}book?author=${book_author}&titulo=${book_title}`
+    const url = `${API_URL}book?author=${encodeURIComponent(book_author)}&titulo=${encodeURIComponent(book_title)}`
+
+    console.log(url)
+
     return Axios.get(url);
 
 }
@@ -51,6 +54,9 @@ export const deleteBook = (bookId) => {
 export const getAllBooks = () => {
 
     const url = `${API_URL}book/all`
+
+    console.log(url)
+
     return Axios.get(url);
 
 }

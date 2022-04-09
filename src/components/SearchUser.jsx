@@ -24,6 +24,7 @@ function SearchUser() {
     useEffect(() => {
         getUser(formValues).then(
             ({ data }) => {
+                console.log(data)
                 setUserData(data)
             }
         ).catch((e) => {
@@ -31,10 +32,6 @@ function SearchUser() {
     }, [formValues]);
 
     const { msg, errors } = userData
-    console.log("data ", userData)
-    console.log("msg", msg)
-    console.log("errors ", errors)
-
 
     return (
         <div className="w-screen min-h-screen flex items-center flex-col">
