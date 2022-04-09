@@ -52,7 +52,7 @@ function SearchUser() {
                 </form>
             </div>
 
-            <div className="w-4/5 flex justify-center">
+            <div className="w-4/5 flex justify-center  ">
                 {
                     (!errors && Object.keys(userData).length > 0 && !msg)
                         ?

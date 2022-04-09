@@ -47,8 +47,8 @@ function ReportScreen() {
 
 
                     return (
-                        <div>
-                            <h5 className="text-center	 my-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{book.book_title}</h5>
+                        <div >
+                            <h5 className="text-center	animate__animated animate__rotateIn my-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{book.book_title}</h5>
                             <Doughnut data={data} />
                         </div>
                     )

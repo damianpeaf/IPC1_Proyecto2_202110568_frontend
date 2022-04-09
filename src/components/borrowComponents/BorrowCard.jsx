@@ -43,7 +43,7 @@ function BorrowCard({ borrowData, type = '' }) {
     }
 
     return (
-        <div className="mt-5 mx-3 w-full block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
+        <div className="animate__animated animate__flip mt-5 mx-3 w-full block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
             <form className="w-4/5" onSubmit={handleSubmit}>
 
                 {
