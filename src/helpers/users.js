@@ -1,5 +1,5 @@
 import Axios from 'axios'
-const API_URL = "https://ipc1-c-202110568.herokuapp.com/"
+const API_URL = "http://127.0.0.1:5000/"
 
 export const postUser = ({ userId = '', username = '', nickname = '', password = '', rol = '', habilitado = '' }) => {
 
